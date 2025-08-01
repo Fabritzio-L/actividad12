@@ -17,3 +17,17 @@ else:
                         break
                     except ZeroDivisionError:
                         print("Error: no se puede calcular promedio sin notas ingresadas.")
+            promedio = sum(notas)/cantidad_notas
+            estudiantes[nombre]=promedio
+        except ValueError:
+            print("Error: ingrese un numero entero")
+        except ZeroDivisionError:
+            print("Error: No se puede calcular el promedio sin ninguna nota.")
+        except TypeError:
+            print("Error: Operacion invalida entre distinto tipos de datos.")
+        except Exception as e:
+            print("Error inesperado: ",e)
+        finally:
+            print("Registro de estudiante finalizado")
+finally:
+    print()
