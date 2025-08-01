@@ -9,24 +9,11 @@ else:
         notas=[]
         try:
             cantidad_notas= int(input("¿Cuantas notas desea ingresar?: "))
-        except ValueError:
-            print("Error: ingrese valores validos.")
             for j in range(cantidad_notas):
-                nota= int(input("Ingrese la nota: "))
-                notas.append(nota)
-                for nota in notas:
-                    promedio = sum(nota)/len(nota)
-    except ValueError:
-        print("Error: ingrese valores validos.")
-    except ZeroDivisionError:
-        print("Error: no se puede calcular promedio sin notas ingresadas.")
-    except TypeError:
-        print("Error: No se pueden combinar diferentes tipos de datos")
-    except Exception as e:
-        print("Se produjo un error inesperado:", e)
-    else:
-        for estudiante in estudiantes:
-            print(estudiante)
-            print(promedio)
-    finally:
-        print("Fin del proceso")
+                while True:
+                    try:
+                        nota= int(input("Ingrese la nota: "))
+                        notas.append(nota)
+                        break
+                    except ZeroDivisionError:
+                        print("Error: no se puede calcular promedio sin notas ingresadas.")
