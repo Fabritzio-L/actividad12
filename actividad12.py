@@ -30,4 +30,6 @@ else:
         finally:
             print("Registro de estudiante finalizado")
 finally:
-    print()
+    print("\nPromedio de estudiantes")
+    for nombre, promedio in estudiantes.items():
+        print(f"{nombre}: {promedio}")
